@@ -1,0 +1,88 @@
+:root {
+  --smallchars: 10px;
+  --normalchars: 13px;
+  --panel-width: 180px;
+  --panel-height: 30px;
+  --black: #666666;
+  --white: #ffffff;
+  --gray: #f0f0f0;
+  --cyan: #2196f3;
+}
+
+body {
+  margin: 0;
+}
+
+#popupmenu {
+  margin: 2px;
+}
+
+.smallstr {
+  font-size: var(--smallchars);
+  color: var(--black);
+}
+
+.message {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.message > i {
+  padding-right: 2px;
+  font-style: normal;
+}
+
+.panel {
+  width: var(--panel-width);
+  margin: 0;
+  padding: 0;
+}
+
+.panel > select {
+  margin: 0;
+  width: var(--panel-width);
+  height: var(--panel-height);
+  border-color: var(--gray);
+  background-color: var(--white);
+  color: var(--black);
+  font-size: var(--normalchars);
+}
+
+.panel > hr {
+  border: 1px solid;
+  border-color: var(--gray);
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#submit_btn {
+  display: block;
+  border: 1px solid;
+  border-color: var(--gray);
+  width: var(--panel-width);
+  height: var(--panel-height);
+  line-height: var(--panel-height);
+  text-align: center;
+  color: var(--black);
+  font-size: var(--normalchars);
+  box-sizing: border-box;
+}
+
+#submit_btn:hover {
+  background-color: var(--gray);
+  cursor: pointer;
+}
+
+.option {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+#option_btn {
+  font-style: normal;
+  text-decoration: none;
+  color: var(--black);
+}
+

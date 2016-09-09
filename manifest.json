@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Simple Tab Snapshot",
+    "version": "0.5",
+    "description": "mi2428.link用Chrrome拡張",
+    "browser_action": {
+        "default_icon": "icon/icon.png",
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "permissions": [
+        "tabs",
+        "storage",
+        "https://mi2428.link/*"
+    ],
+    "icons": {
+        "128": "icon/icon.png"
+    }
+}
