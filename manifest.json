@@ -8,6 +8,13 @@
         "default_popup": "popup.html"
     },
     "options_page": "options.html",
+    "background": {
+      "scripts": [
+        "js/lib/jquery.min.js",
+        "js/background.js"
+      ],
+      "persistent": false
+    },
     "content_scripts": [
       {
         "matches": [
@@ -16,7 +23,17 @@
         ],
         "js": [
           "js/lib/jquery.min.js",
-          "js/pool_action.js"
+          "js/content.js"
+        ]
+      },
+      {
+        "matches": [
+          "https://mi2428.net/pools/*/snapshots*",
+          "http://localhost:4567/pools/*/snapshots*"
+        ],
+        "js": [
+          "js/lib/jquery.min.js",
+          "js/restore.js"
         ]
       }
     ],

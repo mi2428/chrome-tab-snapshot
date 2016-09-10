@@ -28,7 +28,8 @@ $(function(){
           tab["url"] = ctabs[j].url;
           tab["title"] = ctabs[j].title;
           tab["pinned"] = ctabs[j].pinned;
-          tab["window"] = queryinfo["windowId"];
+          tab["incognito"] = ctabs[j].incognito;
+          tab["window"] = ctabs[j].windowId;
           tabs.push(tab);
         }
       });

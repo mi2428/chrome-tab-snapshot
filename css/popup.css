@@ -28,6 +28,10 @@ body {
   padding: 0;
 }
 
+.message > i:before {
+  content: "×";
+}
+
 .message > i {
   padding-right: 2px;
   padding-left: 2px;

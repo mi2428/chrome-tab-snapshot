@@ -1,0 +1,24 @@
+function restore(links) {
+  for (var i=0; i<links.length; i++) {
+    chrome.windows.create({"incognito":links[i]["incognito"],"url":req[i]["url"]}, function(cw) {
+      while((req[i]["window"] == w_id) && (i < req_len)) {
+        chrome.tabs.create({"url":req[i]["url"],"pinned":req[i]["pinned"],"windowId":cw.id});
+        console.log("enter"); //debug
+      }
+    })
+  }
+}
+
+chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
+  var req = message["request"];
+  var req_len = req.length;
+  var max_w_id = req[req_len-1]["window"];
+  for (var w_id=0, i=0; w_id<max_w_id && i<req_len; w_id++) {
+    var links = new Object();
+    while (req[i]["window"]==w_id && i<req_len) {
+      links.push(req[i]);
+      i++;
+    }
+    restore(links);
+  }
+});
