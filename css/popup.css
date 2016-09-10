@@ -30,6 +30,7 @@ body {
 
 .message > i {
   padding-right: 2px;
+  padding-left: 2px;
   font-style: normal;
 }
 

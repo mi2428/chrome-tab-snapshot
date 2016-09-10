@@ -8,10 +8,23 @@
         "default_popup": "popup.html"
     },
     "options_page": "options.html",
+    "content_scripts": [
+      {
+        "matches": [
+          "https://mi2428.net/pools/*",
+          "http://localhost:4567/pools/*"
+        ],
+        "js": [
+          "js/lib/jquery.min.js",
+          "js/pool_action.js"
+        ]
+      }
+    ],
     "permissions": [
         "tabs",
         "storage",
-        "https://mi2428.link/*"
+        "https://mi2428.link/pools/*",
+        "http://localhost:4567/pools/*"
     ],
     "icons": {
         "128": "icon/icon.png"
