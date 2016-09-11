@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Simple Tab Snapshot",
+    "name": "mi2428.link",
     "version": "0.5",
-    "description": "mi2428.link用Chrrome拡張",
+    "description": "ウィンドウ状態のスナップショット作成",
     "browser_action": {
         "default_icon": "icon/icon.png",
         "default_popup": "popup.html"
@@ -40,6 +40,7 @@
     "permissions": [
         "tabs",
         "storage",
+        "notifications",
         "https://mi2428.link/pools/*",
         "http://localhost:4567/pools/*"
     ],

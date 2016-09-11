@@ -15,6 +15,24 @@ $(function(){
   });
 });
 
+$(function(){
+  chrome.storage.sync.get(function(storage){
+    var pools = storage["pools"].split(',');
+    console.log(pools);
+    for (var i=0; i<pools.length; i++) {
+      var pool = pools[i];
+      $("#panel-pool").append($("<option>").val(pool).text(pool));
+    }
+  });
+});
+
+$(function(){
+  $("#option_btn").click(function(){
+    chrome.tabs.create({
+      "url": chrome.extension.getURL("options.html")
+    });
+  });
+});
 
 $(function(){
   var tabs = new Array();
@@ -38,11 +56,18 @@ $(function(){
 
   // create json request and post to server
   $("#submit_btn").click(function(){
-    var content = new Object();
-    content["pool"] = $("#panel-pool").val();
-    content["snapshot"] = tabs;
-    $.post("http://localhost:4567/pools",JSON.stringify(content));
-    alert("サーバに送信しました");
+    chrome.storage.sync.get(function(storage) {
+      var content = new Object();
+      content["pool"] = $("#panel-pool").val();
+      content["snapshot"] = tabs;
+      $.post(storage["server"], JSON.stringify(content));
+      chrome.notifications.create({
+          "type": "basic",
+          "iconUrl": "icon/icon.png",
+          "title":"mi2428.link",
+          "message":"サーバに送信しました"
+      });
+    });
   });
 });
 

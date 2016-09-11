@@ -1,0 +1,15 @@
+.block-header {
+  border-color: #3aaf85;
+}
+
+#pools {
+  width: 100%;
+  font-size: var(--normalchars);
+  line-height: 100%;
+  border: 1px solid;
+  border-color: var(--gray);
+}
+
+#submit_btn {
+  margin-top: 0;
+}
