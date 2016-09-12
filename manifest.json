@@ -18,7 +18,7 @@
     "content_scripts": [
       {
         "matches": [
-          "https://mi2428.net/pools/*",
+          "https://mi2428.link/pools/*",
           "http://localhost:4567/pools/*"
         ],
         "js": [
@@ -28,7 +28,7 @@
       },
       {
         "matches": [
-          "https://mi2428.net/pools/*/snapshots*",
+          "https://mi2428.link/pools/*/snapshots*",
           "http://localhost:4567/pools/*/snapshots*"
         ],
         "js": [
